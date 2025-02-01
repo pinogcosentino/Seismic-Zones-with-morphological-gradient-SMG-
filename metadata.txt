@@ -2,7 +2,7 @@
 name=Seismic microzones with morphological gradient
 qgisMinimumVersion=3.0
 description=This plugin identifies areas with a morphological gradient with slopes ≥15° within seismic zones (Input vector file) starting from the DTM
-version=0.1
+version=0.3
 author=Giuseppe Cosentino (Pino)
 email=giuseppe.cosentino@cnr.it
 
@@ -17,6 +17,10 @@ repository=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gr
 hasProcessingProvider=yes
 # Uncomment the following line and add your changelog:
 # changelog=
+<b>v0.3:</b>
+	- The attribute table of the output layer now has the fields of the input layer
+<b>v0.2:</b>
+	- Fixed some minor issues
 
 # Tags are comma separated with spaces allowed
 tags=Geology, Seismic microzonation, Geomorphology
