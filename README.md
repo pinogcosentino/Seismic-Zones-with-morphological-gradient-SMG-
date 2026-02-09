@@ -5,12 +5,10 @@ The morphological gradient in seismic areas with slopes ≥15° can influence th
 ![icon](https://github.com/user-attachments/assets/4b4d1e04-bb1b-4ccf-8637-5f240d306d0e)
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Livello_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 380.7 372.73">
-  <!-- Generator: Adobe Illustrator 30.2.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 105)  -->
+ 
   <defs>
-    <style>
-      .st0 {
-        fill: #f4e90f;
-      }
+    
+
 
   </defs>
   <path class="st5" d="M-439-197.72"/>
