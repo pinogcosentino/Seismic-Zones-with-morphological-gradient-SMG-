@@ -12,36 +12,6 @@ The morphological gradient in seismic areas with slopes ≥15° can influence th
         fill: #f4e90f;
       }
 
-      .st1 {
-        fill: #fa0;
-      }
-
-      .st2 {
-        fill: #5eff00;
-      }
-
-      .st3 {
-        fill: #140e0f;
-      }
-
-      .st4 {
-        fill: #0b6efc;
-      }
-
-      .st5 {
-        fill: none;
-        stroke: #28b0e6;
-        stroke-miterlimit: 10;
-      }
-
-      .st6 {
-        fill: #997a3d;
-      }
-
-      .st7 {
-        fill: #06f9ff;
-      }
-    </style>
   </defs>
   <path class="st5" d="M-439-197.72"/>
   <g>
