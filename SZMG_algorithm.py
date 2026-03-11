@@ -38,17 +38,28 @@ from qgis.core import QgsProcessingParameterVectorLayer
 from qgis.core import QgsProcessingParameterRasterDestination
 from qgis.core import QgsProcessingParameterFeatureSink
 from qgis.core import QgsVectorLayer
-from qgis.utils import iface 
+from qgis.core import Qgis
+from qgis.utils import iface
 import processing
+
+# ============================================================================
+# QGIS 4.0 / Qt6 compatibility
+# ============================================================================
+if Qgis.QGIS_VERSION_INT >= 40000:
+    _TYPE_POLYGON  = Qgis.ProcessingSourceType.VectorPolygon    # ← QGIS 4.0
+    _TYPE_ANY_GEOM = Qgis.ProcessingSourceType.VectorAnyGeometry # ← QGIS 4.0
+else:
+    _TYPE_POLYGON  = QgsProcessing.TypeVectorPolygon             # QGIS 3.x
+    _TYPE_ANY_GEOM = QgsProcessing.TypeVectorAnyGeometry         # QGIS 3.x
 
 
 class SeismicMicrozonationAlgorithm(QgsProcessingAlgorithm):
 
     def initAlgorithm(self, config=None):
         self.addParameter(QgsProcessingParameterRasterLayer('digital__terrain_model_raster_input', 'Digital  terrain model (raster INPUT)', defaultValue=None))
-        self.addParameter(QgsProcessingParameterVectorLayer('geological_seismic_zones_vector_input', 'Geological Seismic Zones (Vector INPUT)', types=[QgsProcessing.TypeVectorPolygon], defaultValue=None))
+        self.addParameter(QgsProcessingParameterVectorLayer('geological_seismic_zones_vector_input', 'Geological Seismic Zones (Vector INPUT)', types=[_TYPE_POLYGON], defaultValue=None))  # ← QGIS 4.0: Qgis.ProcessingSourceType.VectorPolygon
         self.addParameter(QgsProcessingParameterRasterDestination('Slope', 'Slope (°)', createByDefault=True, defaultValue=''))
-        self.addParameter(QgsProcessingParameterFeatureSink('Zs15', 'ZS15', optional=True, type=QgsProcessing.TypeVectorAnyGeometry, createByDefault=True, defaultValue='TEMPORARY_OUTPUT'))
+        self.addParameter(QgsProcessingParameterFeatureSink('Zs15', 'ZS15', optional=True, type=_TYPE_ANY_GEOM, createByDefault=True, defaultValue='TEMPORARY_OUTPUT'))  # ← QGIS 4.0: Qgis.ProcessingSourceType.VectorAnyGeometry
 
     def processAlgorithm(self, parameters, context, model_feedback):
         # Use a multi-step feedback, so that individual child algorithm progress reports are adjusted for the
