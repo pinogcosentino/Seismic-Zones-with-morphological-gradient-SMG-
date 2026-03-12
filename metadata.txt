@@ -1,16 +1,19 @@
-[gen[general]
-name=Seismic microzones with morphological gradient
+[general]
+name=Geology from points and lines
 qgisMinimumVersion=3.16
 qgisMaximumVersion=4.99
-description=This plugin identifies areas with a morphological gradient with slopes ≥15° within seismic zones (Input vector file) starting from the DTM
-version=1.0.0
-author=Giuseppe Cosentino (Pino)
+description=Automated Geological Mapping Plugin
+description[it]=Plugin per la Cartografia Geologica Automatizzata
+version=2.0.1
+author=Giuseppe Cosentino(Pino)
 email=giuseppe.cosentino@cnr.it
 
-about=Seismic Zones with morphological gradient (SMG) The morphological gradient in seismic areas with slopes greater than 15° can influence the propagation of seismic waves, amplifying their energy and increasing the risks of landslides or ground subsidence. This plugin identifies areas with a morphological gradient with slopes ≥15° within seismic zones (Input vector file) starting from the DTM
+about=This plugin automates the creation of geological polygons by converting linear geological boundaries (contacts) into closed geometries. By leveraging control points that hold the specific geological data, the tool automatically assigns the correct attributes such as lithology and age to the resulting areas. This ensures high geometric accuracy and maintains strict topology between contact lines and geological units.
+about[it]=Questo plugin automatizza la generazione di poligoni geologici trasformando i segmenti lineari dei limiti (contatti) in geometrie chiuse. Il sistema assegna automaticamente gli attributi corretti (come litologia ed età) incrociando i dati con punti di controllo contenenti le informazioni geologiche di riferimento. Il risultato è un dataset geometricamente accurato che garantisce una topologia perfetta tra i contatti lineari e le unità poligonali.
 
-tracker=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gradient-SMG-/issues
-repository=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gradient-SMG-
+
+tracker=https://github.com/pinogcosentino/Geology-from-points-and-lines/pulls
+repository=https://github.com/pinogcosentino/Geology-from-points-and-lines
 # End of mandatory metadata
 
 # Recommended items:
@@ -18,23 +21,30 @@ repository=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gr
 hasProcessingProvider=yes
 
 changelog=
-	<b>v1.0.0:</b>
-		- Full compatibility with QGIS 4.x (PyQt6, Qt6 enums)
-		- Backward compatible with QGIS 3.16+ (PyQt5)
-		- Updated enum references: Qgis.ProcessingSourceType
-	<b>v0.4:</b>
-		- Fixed some minor issues
-		- New icon
-	<b>v0.3:</b>
-		- The attribute table of the output layer now has the fields of the input layer
-	<b>v0.2:</b>
-		- Fixed some minor issues
+    <b>Version 2.0.1</b>
+        - Inserted icon into the QGIS menu bar
+    <b>Version 2.0.0</b>
+        - Full compatibility with QGIS 4.x (PyQt6, Qt6 enums)
+        - Backward compatible with QGIS 3.16+ (PyQt5)
+        - Updated enum references: Qgis.MessageLevel, Qgis.GeometryType, Qgis.ProcessingSourceType
+        - Updated QgsProcessingParameterField.DataType and QgsProcessingParameterNumber.Type
+    <b>Version 1.1.0</b>
+        - Add Vertex tollerance
+        - Add Spatial Predicate
+        - Add Check quality control
+    <b>Version 1.0.1</b>
+        - Fixed some minor issues
+        - new icon
+    <b>Version 1.0</b>
+        - The linear segments representing geological contacts have been joined based on the information contained within the points (geological input)
+        - Added the "HELP" button
+        - Fixed some minor issues
 
 # Tags are comma separated with spaces allowed
-tags=Geology, Seismic microzonation, Geomorphology
+tags=Geology, geoprocessing, cartography, python
 
-homepage=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gradient-SMG-
-category=Analysis
+homepage=https://github.com/pinogcosentino/Geology-from-points-and-lines
+category=Vector
 icon=icon.png
 # experimental flag
 experimental=False
@@ -48,7 +58,7 @@ deprecated=False
 # plugin_dependencies=
 
 Category of the plugin: Raster, Vector, Database or Web
-# category=
+# category=Vector
 
 # If the plugin can run on QGIS Server.
 server=False
