@@ -4,7 +4,7 @@ qgisMinimumVersion=3.16
 qgisMaximumVersion=4.99
 description=This DTM-based plugin provides a critical territorial screening tool. By intersecting slope gradients (≥ 15°) with seismic microzonation data, it automatically identifies slopes prone to instability or motion amplification during earthquakes. An indispensable asset for geologists and land-use planners, it allows for rapid risk assessment, streamlined site investigations, and the design of targeted mitigation strategies, significantly reducing operational costs and time.
 description[it]=Questo plugin partendo da un DTM svolge un'essenziale funzione di screening territoriale: incrociando i dati di pendenza (≥ 15°) con la classificazione geologico-sismica delle aree, evidenzia automaticamente i versanti che presentano una maggiore suscettibilità a fenomeni di instabilità o amplificazione in caso di sisma. Rappresenta uno strumento operativo fondamentale per geologi e pianificatori, consentendo di individuare rapidamente le aree a rischio, concentrare le indagini geologiche dove realmente necessario e progettare misure di mitigazione mirate, ottimizzando così tempi e costi.
-version=1.0.1
+version=1.0.2
 author=Giuseppe Cosentino (Pino)
 email=giuseppe.cosentino@cnr.it
 
@@ -20,6 +20,8 @@ repository=https://github.com/pinogcosentino/Seismic-Zones-with-morphological-gr
 hasProcessingProvider=yes
 
 changelog=
+	<b>v1.0.2:</b>
+		- Slope parameter
 	<b>v1.0.1:</b>
 		- Inserted icon into the QGIS menu bar
 	<b>v1.0.0:</b>
